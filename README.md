@@ -1,3 +1,3 @@
 # Micro Framwork
 
-php micro framework
+php micro frameWork
