@@ -17,6 +17,6 @@ class Lang {
   }
 
   public static function print_test($input) {
-    print_r($input)
+    print_r($input);
   }
 }
