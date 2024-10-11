@@ -1,8 +1,9 @@
 <?php
 
-use App\Utilities\Url;
+use App\Core\StupidRouter;
 
 include 'bootstrap/init.php';
 
-$route = Url::current_route();
-echo $route;
+$router = new StupidRouter();
+$router->run();
+
