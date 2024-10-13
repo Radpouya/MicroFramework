@@ -11,14 +11,18 @@ class Request {
 
   public function __construct() {
     $this->params = $_REQUEST;
-    $this->method = $_SERVER['HTTP_USER_AGENT'];
-    $this->agent = $_SERVER['REQUEST_METHOD'];
+    $this->method = strtolower($_SERVER['REQUEST_METHOD']);
+    $this->agent = $_SERVER['HTTP_USER_AGENT'];
     $this->ip = $_SERVER['REMOTE_ADDR'];
     $this->uri = strtok($_SERVER['REQUEST_URI'], '?');
   }
 
   public function __get(string $name) {
     return $this->params[$name] ?? null;
+  }
+
+  public function uri() {
+    return $this->uri;
   }
 
   public function method() {
