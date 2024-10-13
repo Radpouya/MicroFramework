@@ -1,12 +1,12 @@
 <?php
 use App\Core\Routing\Route;
 
-Route::get('/null');
-Route::add(['get', 'post'], '/', function () {
-  echo "welcome";
-});
-Route::post('/saveForm', function () {
-  echo "save ok";
-});
-Route::put('/pururi', ['Controller', 'Method']);
-Route::get('/pururi', 'Controller@Method');
+Route::get('/', ['HomeController', 'index']);
+
+Route::get('/todo/list', 'TodoController@list');
+Route::get('/todo/add', 'TodoController@add');
+Route::get('/todo/remove', 'TodoController@remove');
+
+Route::get('/archive', 'ArchiveController@index');
+Route::get('/archive/articles', 'ArchiveController@articles');
+Route::get('/archive/products', 'ArchiveController@products');
